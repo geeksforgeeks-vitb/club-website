@@ -1,12 +1,49 @@
-import React from 'react';
-import { Code, Terminal, Cpu, GitBranch, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Code, Terminal, Cpu, GitBranch, ArrowRight, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { IMAGES, EVENTS } from '../constants';
 
 const Home: React.FC = () => {
+  const [showBanner, setShowBanner] = useState(() => {
+    return sessionStorage.getItem('borderland-banner-dismissed') !== 'true';
+  });
+
+  const dismissBanner = () => {
+    setShowBanner(false);
+    sessionStorage.setItem('borderland-banner-dismissed', 'true');
+  };
+
   return (
     <>
-      {/* Hero Section */}
+      {/* Borderland Event Notification Banner */}
+      {showBanner && (
+        <div className="fixed top-16 left-0 right-0 z-40" style={{ animation: 'slide-down-fade 0.5s ease-out' }}>
+          <div className="max-w-4xl mx-auto px-4 mt-2">
+            <Link
+              to="/borderlands"
+              onClick={dismissBanner}
+              className="block w-full rounded-xl border border-red-500/30 bg-black/80 backdrop-blur-xl px-4 py-3 hover:border-red-500/60 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(220,38,38,0.15)]"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="text-lg flex-shrink-0">🔥</span>
+                  <div className="min-w-0">
+                    <span className="text-white font-bold text-sm block sm:inline">Borderland: Survive the Chaos</span>
+                    <span className="text-gray-400 text-xs sm:text-sm sm:ml-2 block sm:inline">Feb 27 · AB 1-303 · Register Now →</span>
+                  </div>
+                </div>
+                <button
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); dismissBanner(); }}
+                  className="text-gray-500 hover:text-white transition-colors flex-shrink-0 p-1"
+                  aria-label="Dismiss"
+                >
+                  <X size={16} />
+                </button>
+              </div>
+            </Link>
+          </div>
+        </div>
+      )}
       <div className="relative pt-32 pb-20 sm:pt-40 sm:pb-24 lg:pb-32 overflow-hidden min-h-screen flex items-center">
         {/* Background Glow */}
         <div className="absolute inset-0 bg-mesh-gradient pointer-events-none"></div>

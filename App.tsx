@@ -8,6 +8,7 @@ import Team from './pages/Team';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
+import BorderlandsPage from './pages/Borderlands';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
           <Route path="/events" element={<Events />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/borderlands" element={<BorderlandsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Analytics />
