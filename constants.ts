@@ -61,12 +61,12 @@ export const TEAMS: TeamSection[] = [
     name: 'Technical Team',
     lead: { id: 't1', name: 'Akanksha Shahi', role: 'Technical Lead', image: "images/team/technical/akanksha-shahi.jpg" },
     members: [
-      { id: 't2', name: 'Kartikeya Shukla',role: 'Web Dev', image: "images/team/technical/kartikeya.webp" },
-      { id: 't3', name: 'Krishna Kushwaha',role: 'App Dev', image: "images/team/technical/krishna.jpg" },
+      { id: 't2', name: 'Kartikeya Shukla', role: 'Web Dev', image: "images/team/technical/kartikeya.webp" },
+      { id: 't3', name: 'Krishna Kushwaha', role: 'App Dev', image: "images/team/technical/krishna.jpg" },
       { id: 't4', name: 'Praveen Kumar Patel', role: 'AI/ML', image: "images/team/technical/praveen.jpg" },
       { id: 't5', name: 'Tarni Jain', role: 'Cloud', image: "images/team/technical/tarni.jpg" },
       {
-        id: 't6', name: 'Saumya Ambar',role: 'Web Dev', image: "images/team/technical/saumya.jpg",
+        id: 't6', name: 'Saumya Ambar', role: 'Web Dev', image: "images/team/technical/saumya.jpg",
       },
     ]
   },
@@ -114,8 +114,8 @@ export const TEAMS: TeamSection[] = [
     name: 'Design Team',
     lead: { id: 'd1', name: 'Akanksha Tripathi', role: 'Design Lead', image: IMAGES.placeholder_profile_f },
     members: [
-      { id: 'd2', name: 'Rishita Prajapati', role: 'UI/UX', image: "images/team/design/rishita.jpg"  },
-      { id: 'd3', name: 'Shreesh Upadhayay', role: 'GFX', image: "images/team/design/shreesh.png"  },
+      { id: 'd2', name: 'Rishita Prajapati', role: 'UI/UX', image: "images/team/design/rishita.jpg" },
+      { id: 'd3', name: 'Shreesh Upadhayay', role: 'GFX', image: "images/team/design/shreesh.png" },
       { id: 'd4', name: 'Aditi Dubey', role: 'UI/UX', image: "images/team/design/aditi.jpg" },
       { id: 'd5', name: 'Deeksha Bhojwani ', role: 'UI/UX', image: "images/team/design/deeksha.jpg" },
       { id: 'd6', name: 'Gaurav Jain', role: 'UI/UX', image: "images/team/design/gaurav.jpg" },
@@ -125,8 +125,8 @@ export const TEAMS: TeamSection[] = [
     name: 'Marketing Team',
     lead: { id: 'm1', name: 'Shreya Gupta', role: 'Marketing Lead', image: "images/team/marketing/shreya.jpg" },
     members: [
-      { id: 'm2', name: 'Ansh Mittal ', role: 'Content Writing', image: "images/team/marketing/ansh.jpg"  },
-      { id: 'm3', name: 'Aryan kumar', role: 'Social Media', image: "images/team/marketing/aryan.jpg"  },
+      { id: 'm2', name: 'Ansh Mittal ', role: 'Content Writing', image: "images/team/marketing/ansh.jpg" },
+      { id: 'm3', name: 'Aryan kumar', role: 'Social Media', image: "images/team/marketing/aryan.jpg" },
       { id: 'm4', name: 'Aryan Vishwakarma', role: 'Content Writing', image: "images/team/marketing/aryanv.jpg" },
       { id: 'm5', name: 'Ashvin Dewangan', role: 'Social Media', image: "images/team/marketing/ashvin.jpg" },
       { id: 'm6', name: 'Lavanya', role: 'Content Writing', image: "images/team/marketing/lavanya.jpg" },
@@ -136,14 +136,15 @@ export const TEAMS: TeamSection[] = [
 
 export const EVENTS: Event[] = [
   {
-    id: 'advitya-26',
-    title: '@ Advitya 26\'',
-    date: 'Stay Tuned',
-    type: 'Meetup',
-    image: IMAGES.event_1,
-    description: 'Get ready for our upcoming event at Advitya 26. More details coming soon.',
-    location: 'VIT Bhopal',
-    status: 'Upcoming'
+    id: 'borderland',
+    title: 'Borderland: Survive the Chaos',
+    date: 'Feb 27, 2026',
+    type: 'Competition',
+    image: "/images/events/borderland.png",
+    description: '40 Minutes. Infinite Pressure. One Winning Team. A high-stakes survival game where trust is currency and betrayal is a weapon.',
+    location: 'AB 1 - 303',
+    status: 'Upcoming',
+    link: '/borderlands'
   },
   {
     id: 'cp-insights',
@@ -153,7 +154,8 @@ export const EVENTS: Event[] = [
     image: IMAGES.event_2,
     description: 'An online Competitive Programming speaker session featuring Jaskaran Singh (ICPC World Finalist, SWE @ Google).',
     location: 'Online',
-    status: 'Past'
+    status: 'Past',
+    link: 'https://www.youtube.com/live/hQaXJ6-Vx0w'
   },
   {
     id: 'geek-gala',

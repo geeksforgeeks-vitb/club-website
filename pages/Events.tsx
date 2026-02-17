@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Filter, Calendar, Clock, MapPin, ChevronRight, Bell } from 'lucide-react';
 import { EVENTS } from '../constants';
+import { Link } from 'react-router-dom';
 
 const Events: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Upcoming');
@@ -47,8 +48,8 @@ const Events: React.FC = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2 transition-colors ${activeTab === tab
-                    ? 'border-primary text-primary'
-                    : 'border-transparent text-gray-400 hover:text-gray-200 hover:border-gray-300'
+                  ? 'border-primary text-primary'
+                  : 'border-transparent text-gray-400 hover:text-gray-200 hover:border-gray-300'
                   }`}
               >
                 {tab}
@@ -88,12 +89,25 @@ const Events: React.FC = () => {
                     <span className="block text-gray-300 font-medium">{event.location}</span>
                     <span>VIT Bhopal</span>
                   </div>
-                  <button className="text-primary hover:text-white text-sm font-medium transition-colors flex items-center gap-1">
-                    Details <ChevronRight size={16} />
-                  </button>
+                  {event.link ? (
+                    event.link.startsWith('/') ? (
+                      <Link to={event.link} className="text-primary hover:text-white text-sm font-medium transition-colors flex items-center gap-1">
+                        Details <ChevronRight size={16} />
+                      </Link>
+                    ) : (
+                      <a href={event.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white text-sm font-medium transition-colors flex items-center gap-1">
+                        Details <ChevronRight size={16} />
+                      </a>
+                    )
+                  ) : (
+                    <button className="text-primary hover:text-white text-sm font-medium transition-colors flex items-center gap-1">
+                      Details <ChevronRight size={16} />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
+
           ))}
 
           {/* Placeholder for More */}
@@ -111,7 +125,7 @@ const Events: React.FC = () => {
         </div>
 
       </div>
-    </div>
+    </div >
   );
 };
 

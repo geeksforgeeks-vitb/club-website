@@ -26,6 +26,7 @@ export interface Event {
   description: string;
   location: string;
   status: 'Upcoming' | 'Past';
+  link?: string;
 }
 
 export interface Project {
