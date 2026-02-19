@@ -240,7 +240,7 @@ const BorderlandsPage: React.FC = () => {
                         </span>
                     </div>
 
-                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-white borderland-glow leading-[0.9]">
+                    <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tight text-white borderland-glow leading-[0.95] text-center break-words">
                         BORDERLAND
                     </h1>
                     <p className="mt-4 text-xl md:text-2xl font-light tracking-wide" style={{ color: ACCENT.primary }}>
@@ -268,7 +268,7 @@ const BorderlandsPage: React.FC = () => {
                     <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                         <button
                             onClick={() => scrollTo('what')}
-                            className="group relative px-8 py-3.5 text-white font-bold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105"
+                            className="group relative px-8 py-3.5 text-white font-bold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 flex items-center justify-center"
                             style={{ background: ACCENT.primary, boxShadow: `0 0 30px ${ACCENT.glow}` }}
                         >
                             <span className="relative z-10 flex items-center gap-2">
@@ -279,11 +279,22 @@ const BorderlandsPage: React.FC = () => {
                             href={REGISTRATION_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-8 py-3.5 font-bold rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105"
-                            style={{ border: `1px solid ${ACCENT.border40}`, color: ACCENT.primary }}
-                        >
-                            Register Now
+                            className="group relative px-8 py-3.5 font-bold rounded-xl transition-all duration-300 hover:scale-105 overflow-hidden"
+                            style={{
+                                background: ACCENT.primary,
+                                boxShadow: `0 0 25px ${ACCENT.glow}`,
+                                color: "white"
+                            }}
+>
+                            <span className="relative z-10 flex items-center justify-center gap-2">
+                                Register Now
+                                <ChevronRight
+                                  size={18}
+                                  className="group-hover:translate-x-1 transition-transform"
+                             />
+                            </span>
                         </a>
+
                     </div>
 
                     {/* Countdown */}
