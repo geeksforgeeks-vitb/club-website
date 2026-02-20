@@ -10,10 +10,13 @@ const TeamCard: React.FC<{ member: any, isLarge?: boolean }> = ({ member, isLarg
                 <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover object-top rounded-full
+                               filter grayscale group-hover:grayscale-0
+                               transition-all duration-500"
                     loading="lazy"
                     decoding="async"
                 />
+
             </div>
             <h3 className={`${isLarge ? 'text-lg' : 'text-base'} font-bold text-white mb-1`}>{member.name}</h3>
             <p className="text-primary text-xs font-medium mb-3">{member.role}</p>
@@ -100,7 +103,8 @@ const Team: React.FC = () => {
                                     <img
                                         src={team.lead.image}
                                         alt={team.lead.name}
-                                        className="w-20 h-20 rounded-full object-cover mb-4 border-2 border-primary/30"
+                                        className="w-20 h-20 rounded-full object-cover object-top
+                                                   mb-4 border-2 border-primary/30"
                                         loading="lazy"
                                         decoding="async"
                                     />
@@ -131,7 +135,8 @@ const Team: React.FC = () => {
                             <div className="md:col-span-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                 {team.members.map((member) => (
                                     <div key={member.id} className="bg-surface rounded-lg p-4 border border-white/5 hover:border-white/10 transition-colors flex flex-col items-center text-center">
-                                        <div className="w-12 h-12 rounded-full overflow-hidden mb-3">
+                                        <div className="w-12 h-12 rounded-full overflow-hidden mb-3 bg-black">
+
                                             <img src={member.image} alt={member.name} className="w-full h-full object-cover opacity-80" loading="lazy" decoding="async" />
                                         </div>
                                         <h4 className="text-sm font-medium text-gray-200">{member.name}</h4>
