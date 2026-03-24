@@ -72,7 +72,7 @@ export const TEAMS: TeamSection[] = [
   },
   {
     name: 'Event Management Team',
-    lead: { id: 'e1', name: 'Vishal Kumar', role: 'Events Lead', image: "images/team/events/vishal.jpg" },
+    lead: { id: 'e1', name: 'Vishal Kumar', role: 'Events Lead', image: "images/team/event/vishal.jpg" },
     members: [
       { id: 'e2', name: 'Vedanshika Singh', role: 'Logistics', image: "images/team/event/vedanshika.jpg" },
       { id: 'e3', name: 'Steve Kevin Dias', role: 'Planning', image: "images/team/event/steve.jpg" },
@@ -128,7 +128,7 @@ export const TEAMS: TeamSection[] = [
       { id: 'm2', name: 'Ansh Mittal ', role: 'Content Writing', image: "images/team/marketing/ansh.jpg" },
       { id: 'm3', name: 'Aryan kumar', role: 'Social Media', image: "images/team/marketing/aryan.jpg" },
       { id: 'm4', name: 'Aryan Vishwakarma', role: 'Content Writing', image: "images/team/marketing/aryanv.jpg" },
-      { id: 'm5', name: 'Ashvin Dewangan', role: 'Social Media', image: "images/team/marketing/ashvin.jpg" },
+      { id: 'm5', name: 'Ashvin Dewangan', role: 'Social Media', image: "images/team/marketing/ashvin.png" },
       { id: 'm6', name: 'Lavanya', role: 'Content Writing', image: "images/team/marketing/lavanya.jpg" },
     ]
   },
