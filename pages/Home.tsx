@@ -197,7 +197,10 @@ const Home: React.FC = () => {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {EVENTS.slice(0, 3).map((event) => (
+            {EVENTS
+            .filter((event) => event.status === 'Upcoming')
+            .slice(0, 3)
+            .map((event) => (
               <div key={event.id} className="group cursor-pointer">
                 <div className="relative aspect-video rounded-xl overflow-hidden mb-4 border border-white/10">
                   <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded border border-white/10 z-10">
