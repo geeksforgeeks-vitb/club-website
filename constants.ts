@@ -143,7 +143,7 @@ export const EVENTS: Event[] = [
     image: "/images/events/borderland.png",
     description: '40 Minutes. Infinite Pressure. One Winning Team. A high-stakes survival game where trust is currency and betrayal is a weapon.',
     location: 'AB 1 - 303',
-    status: 'Upcoming',
+    status: 'Past',
     link: '/borderlands'
   },
   {

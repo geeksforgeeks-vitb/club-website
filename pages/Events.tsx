@@ -53,7 +53,11 @@ const Events: React.FC = () => {
                   }`}
               >
                 {tab}
-                {tab === 'Upcoming' && <span className="ml-2 bg-primary/20 text-primary py-0.5 px-2 rounded-full text-xs">3</span>}
+                {tab === 'Upcoming' && (
+                  <span className="ml-2 bg-primary/20 text-primary py-0.5 px-2 rounded-full text-xs">
+                    {EVENTS.filter(e => e.status === 'Upcoming').length}
+                  </span>
+            )}
               </button>
             ))}
           </nav>
@@ -61,7 +65,14 @@ const Events: React.FC = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {EVENTS.map((event) => (
+          {EVENTS
+            .filter((event) => {
+              if (activeTab === 'Upcoming') return event.status === 'Upcoming';
+              if (activeTab === 'Past Events') return event.status === 'Past';
+              if (activeTab === 'Hackathons') return event.type === 'Hackathon';
+              return true;
+            })
+            .map((event) => (
             <div key={event.id} className="group relative rounded-xl border border-white/10 bg-[#111] overflow-hidden hover:border-primary/40 hover:shadow-[0_0_20px_-5px_rgba(47,142,71,0.2)] transition-all duration-300 flex flex-col h-full">
               <div className="relative h-48 w-full overflow-hidden">
                 <div className="absolute top-3 left-3 z-10">
